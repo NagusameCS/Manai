@@ -1,0 +1,100 @@
+# Manai Configuration File
+
+# Ollama Settings
+ollama:
+  host: "http://localhost:11434"
+  model: "llama3.2"  # Recommended: llama3.2, codellama, deepseek-coder, qwen2.5-coder
+  timeout: 300  # seconds
+  options:
+    temperature: 0.7
+    top_p: 0.9
+    num_ctx: 8192  # Context window size
+
+# Alternative Models (easy switching with: manai switch-model <name>)
+recommended_models:
+  general: "llama3.2"          # Good all-around
+  coding: "codellama"          # Best for code generation
+  reasoning: "deepseek-coder"  # Deep reasoning + code
+  fast: "qwen2.5-coder:3b"     # Fastest responses
+  large: "llama3.2:70b"        # Best quality (needs GPU)
+
+# Agent Settings
+agent:
+  default_thinking_mode: "standard"  # quick, standard, deep, verify
+  enable_math_verification: true
+  enable_tool_use: true
+  show_reasoning: true
+  max_tool_calls: 10
+
+# UI Settings
+ui:
+  theme: "monotone"  # monotone, colorful
+  show_thinking: true
+  show_tool_calls: true
+  progress_style: "bar"  # bar, spinner
+
+# Manim Settings
+manim:
+  quality: "high"  # low, medium, high, production
+  format: "mp4"
+  fps: 60
+  resolution: "1920x1080"
+  background_color: "#1a1a2e"
+  output_dir: "./output"
+  
+# Quality Presets
+quality_presets:
+  low:
+    pixel_height: 480
+    pixel_width: 854
+    frame_rate: 15
+  medium:
+    pixel_height: 720
+    pixel_width: 1280
+    frame_rate: 30
+  high:
+    pixel_height: 1080
+    pixel_width: 1920
+    frame_rate: 60
+  production:
+    pixel_height: 2160
+    pixel_width: 3840
+    frame_rate: 60
+
+# Generation Settings
+generation:
+  max_retries: 3
+  auto_fix_errors: true
+  save_intermediate: true
+  include_narration_hints: true
+
+# Templates
+templates:
+  default_2d: "derivative"
+  default_3d: "surface"
+  custom_templates_dir: "./templates"
+
+# Math/Physics Topics (for reference)
+topics:
+  math:
+    - algebra
+    - geometry
+    - trigonometry
+    - calculus
+    - linear_algebra
+    - differential_equations
+    - complex_analysis
+    - number_theory
+    - statistics
+    - probability
+  physics:
+    - mechanics
+    - electromagnetism
+    - thermodynamics
+    - waves
+    - optics
+    - quantum_mechanics
+    - relativity
+    - particle_physics
+    - astrophysics
+    - fluid_dynamics
